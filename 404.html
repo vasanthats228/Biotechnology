@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>404 · page not found</title>
+  <!-- Inter font (clean) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #ecf5f8;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+    }
+
+    .container {
+      max-width: 500px;
+      width: 100%;
+      background: white;
+      border-radius: 36px;
+      padding: 3rem 2rem;
+      text-align: center;
+      box-shadow: 0 18px 30px -8px rgba(0, 50, 50, 0.1);
+      border: 1px solid #e0edf2;
+      animation: fadeSlideUp 0.6s ease-out;
+    }
+
+    /* simple 404 number with gentle float */
+    .four04 {
+      font-size: 96px;
+      font-weight: 600;
+      color: #1f8a7c;
+      line-height: 1;
+      margin-bottom: 16px;
+      letter-spacing: 4px;
+      animation: softFloat 3s infinite ease-in-out;
+      display: inline-block;
+    }
+
+    /* message with fade-in */
+    h2 {
+      font-size: 28px;
+      font-weight: 500;
+      color: #145c66;
+      margin-bottom: 12px;
+      opacity: 0;
+      animation: fadeIn 0.5s ease-out forwards;
+      animation-delay: 0.2s;
+    }
+
+    p {
+      font-size: 18px;
+      color: #397a84;
+      margin-bottom: 32px;
+      font-weight: 300;
+      opacity: 0;
+      animation: fadeIn 0.5s ease-out forwards;
+      animation-delay: 0.3s;
+    }
+
+    /* back to home button with subtle pulse */
+    .home-btn {
+      display: inline-block;
+      background: #1f9a8a;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 500;
+      padding: 16px 48px;
+      border-radius: 50px;
+      box-shadow: 0 6px 14px rgba(20, 110, 100, 0.3);
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+      opacity: 0;
+      animation: fadeIn 0.5s ease-out forwards, gentlePulse 2.5s infinite 1s;
+      animation-delay: 0.4s;
+    }
+
+    .home-btn:hover {
+      background: #0e7b6e;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 20px rgba(10, 90, 80, 0.25);
+      animation: none; /* pause pulse on hover */
+    }
+
+    /* keyframes */
+    @keyframes fadeSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes softFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    @keyframes gentlePulse {
+      0%, 100% {
+        box-shadow: 0 6px 14px rgba(20, 110, 100, 0.3);
+      }
+      50% {
+        box-shadow: 0 10px 24px rgba(25, 140, 130, 0.5);
+      }
+    }
+
+    /* responsive */
+    @media (max-width: 450px) {
+      .container {
+        padding: 2.5rem 1.5rem;
+      }
+      .four04 {
+        font-size: 72px;
+      }
+      h2 {
+        font-size: 24px;
+      }
+      p {
+        font-size: 16px;
+      }
+      .home-btn {
+        font-size: 16px;
+        padding: 14px 36px;
+        width: 100%;
+        max-width: 260px;
+      }
+    }
+
+    @media (max-width: 350px) {
+      .four04 {
+        font-size: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="four04">404</div>
+    <h2>page not found</h2>
+    <p>sorry, the page you're looking for doesn't exist</p>
+    <a href="index.html" class="home-btn">← back to home</a>
+  </div>
+</body>
+</html>
